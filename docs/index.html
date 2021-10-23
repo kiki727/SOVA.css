@@ -1,0 +1,1913 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>SOVA css</title>
+
+    <link rel="icon" type="image/png" href="./img/sova.png" />
+
+    <link rel="stylesheet" href="./css/normalize.min.css" />
+    <link rel="stylesheet" href="./css/sova.css" />
+
+    <link rel="stylesheet" href="./prism/prism.css" />
+
+    <style>
+      .menu {
+        position: fixed;
+        top: 0;
+        bottom: 0px;
+        width: 169px;
+        background: #f1f1f1;
+        margin: 0;
+        overflow-y: auto;
+        padding-left: 4px;
+      }
+
+      a.mlink {
+        display: block;
+        margin-bottom: 3px;
+        text-decoration: none;
+        padding: 0.3rem 2rem 0.3rem;
+        line-height: 1.618;
+        font-size: 1.4rem;
+        font-weight: bold;
+        letter-spacing: 0.1rem;
+        color: rgba(73, 119, 165, 1);
+      }
+
+      a.mlink:not(.active):hover {
+        font-weight: bold;
+        color: rgba(44, 62, 80, 1) !important;
+        background-color: #ccc;
+      }
+
+      a.mlink.active {
+        color: #f1f1f1;
+        font-weight: bold;
+        background-color: rgba(44, 62, 80, 1) !important;
+      }
+
+      main {
+        margin-top: 70vh;
+      }
+
+      .content-page {
+        margin-left: 171px;
+      }
+
+      code[class*="language-"],
+      pre[class*="language-"] {
+        font-size: 1.3rem !important;
+      }
+
+      .grid-highlight {
+        background-color: #f7f7f7;
+        border: 1px solid #c7c7c7;
+        border-radius: 0.0725em;
+        margin-bottom: 1.5625em;
+        padding: 0.9375em;
+      }
+
+      .side {
+        font-family: "Montserrat", sans-serif;
+        /*
+    background-color: rgba(58, 83, 108, 0.7);
+    */
+        position: absolute;
+        top: 220px;
+        left: 135px;
+        transform: rotate(-90deg);
+        letter-spacing: 0.1rem;
+      }
+
+      .ff {
+        transform: rotate(9deg);
+        filter: invert(60%);
+        padding-bottom: 0;
+      }
+
+      #rotate {
+        animation: rotation 8s infinite linear;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        33% {
+          transform: rotate(33deg);
+        }
+
+        66% {
+          transform: rotate(-33deg);
+        }
+
+        100% {
+          transform: rotate(0deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+<pre class="lang-html bg-light mt-5">
+<code>
+    <script type="prism-html-markup">
+
+    </script>
+</code>
+</pre>
+    -->
+
+    <div class="menu">
+      <h4 class="m-4 text-light">
+        <a href="#" style="text-decoration: none; color: currentColor"
+          >SOVA.css</a
+        >
+      </h4>
+      <div class="m-2 p-2">
+        <a class="mlink ripple" href="#typography">Typography</a>
+
+        <a class="mlink ripple" href="#tables">Tables</a>
+
+        <a class="mlink ripple" href="#forms">Forms</a>
+
+        <a class="mlink ripple" href="#navbar">Navbar</a>
+
+        <a class="mlink ripple" href="#buttons">Buttons</a>
+
+        <a class="mlink ripple" href="#grids">Grids</a>
+
+        <a class="mlink ripple" href="#cards">Cards</a>
+
+        <a class="mlink ripple" href="#panel">Panel</a>
+
+        <a class="mlink ripple" href="#shadows">Shadows</a>
+
+        <a class="mlink ripple" href="#modal">Modal</a>
+
+        <a class="mlink ripple" href="#colors">Colors</a>
+
+        <a class="mlink ripple" href="#helpers">Helpers</a>
+
+        <a class="mlink ripple" style="font-size: 1.2rem;" href="#dark">Dark mode support</a>
+      </div>
+    </div>
+
+    <div class="content-page">
+      <div class="container">
+        <div class="d-block my-5">
+          <p class="text-small text-light text-center mb-1 mt-5">
+            sova css sova css sova css sova css sova css sova css sova css
+          </p>
+          <hr class="mt-0" />
+          <div class="p-4 text-center mt-5" style="margin: auto auto">
+            <img class="mt-5" src="./img/sova.png" alt="logo" width="120" />
+            <h1 class="mt-0 text-dark-blue">SOVA.css</h1>
+
+            <p class="text-tiny text-light text-italic side">
+              insomnia version
+            </p>
+          </div>
+          <hr class="mb-0" />
+          <div class="text-center text-light">
+            <p class="d-inline text-small mt-1">
+              simple and fast night work 2021
+            </p>
+            <div class="d-inline">
+              <img
+                id="rotate"
+                class="d-inline ff mx-3 mt-3"
+                style="opacity: 0.99"
+                src="./img/Nord_Design_logo-1.svg"
+                alt="nord logo"
+                width="24"
+                height="24"
+              />
+              <p class="d-inline text-small">nord desighn studio &copy; 2014</p>
+            </div>
+          </div>
+
+          <div
+            class="atags text-dark-blue text-small d-block p-absolute"
+            style="bottom: 20px; right: 20px"
+          >
+            <p class="m-0 p-0 text-italic">
+              the starting point for SOVA.css were the scripts
+              <a
+                class="atag ml-2 text"
+                href="https://cferdinandi.github.io/kraken/"
+                target="_blank"
+                >KRAKEN.css</a
+              ><a
+                class="atag ml-2 text"
+                href="http://getskeleton.com/"
+                target="_blank"
+                >SKELETON.css</a
+              >
+              and
+              <a
+                class="atag ml-2 text"
+                href="https://picturepan2.github.io/spectre/"
+                target="_blank"
+                >SPECTRE.css</a
+              >
+            </p>
+          </div>
+        </div>
+
+        <main>
+          <hr />
+          <h3 id="typography" class="bg-blue text-white px-5 r-small sh-01">
+            Typography
+          </h3>
+
+          <div class="row">
+            <div class="grid-half">
+              <h1>Header 1</h1>
+              <h2>Header 2</h2>
+              <h3>Header 3</h3>
+              <h4>Header 4</h4>
+              <h5>Header 5</h5>
+            </div>
+            <div class="grid-half">
+              <pre class="lang-html bg-light mt-5 r-small"><code>
+    <script type="prism-html-markup">
+
+        <h1>header 1</h1>
+        <span class="h1">header 1</span>
+
+        <h2>header 2</h2>
+        <span class="h2">header 2</span>
+
+        <h3>header 3</h3>
+        <span class="h3">header 3</span>
+
+        <h4>header 4</h4>
+        <span class="h4">header 4</span>
+
+        <h5>header 5</h5>
+        <span class="h5">header 5</span>
+
+    </script>
+</code></pre>
+            </div>
+          </div>
+          <br />
+          <p class="text-bold bg-light p-2">Lists</p>
+          <div class="row">
+            <div class="grid-half pl-5">
+              <p>UL list</p>
+              <ul>
+                <li>list element</li>
+                <li>list element</li>
+                <li>list element</li>
+              </ul>
+              <br />
+              <p>OL list</p>
+              <ol>
+                <li>list element</li>
+                <li>list element</li>
+                <li>list element</li>
+              </ol>
+              <br />
+              <p>OL list class unstyled</p>
+              <ol class="unstyled">
+                <li>list element</li>
+                <li>list element</li>
+                <li>list element</li>
+              </ol>
+            </div>
+            <div class="grid-half">
+              <pre class="lang-html bg-light mt-5">
+                <code>
+                    <script type="prism-html-markup">
+        <p> UL list</p>
+        <ul>
+            <li>list element</li>
+            <li>list element</li>
+            <li>list element</li>
+        </ul>
+        <br>
+        <p>OL list</p>
+        <ol>
+            <li>list element</li>
+            <li>list element</li>
+            <li>list element</li>
+        </ol>
+        <br>
+        <p>OL list class unstyled</p>
+        <ol class="unstyled">
+            <li>list element</li>
+            <li>list element</li>
+            <li>list element</li>
+        </ol>
+                    </script>
+                </code>
+                </pre>
+            </div>
+          </div>
+          <h5>Quotes & Citations</h5>
+          <section class="border m-5 p-5">
+            <blockquote>
+                I was born a wicked man, no hopes or dreams
+                I get my kicks from torturing and screams <br>
+                I'm paid in drugs and gold, it's all I need
+                I'll take your soul and cleanse it with my greed
+              <cite>- Uncle Acid and the Deadbeats</cite>
+            </blockquote>
+
+            You can also include superscripts<sup>1</sup> and
+            subscripts<sub>xyz</sub>.
+
+            <br />
+            <pre class="lang-html bg-light mt-5">
+            <code>
+                <script type="prism-html-markup">
+<blockquote>
+    Someone once said something so important, it was deemed worthy of repeating here in the form of a blockquote. This is that blockquote.
+    <cite>- Someone Important</cite>
+</blockquote>
+
+You can also include superscripts<sup>1</sup> and subscripts<sub>xyz</sub>.
+                </script>
+            </code>
+            </pre>
+
+            <hr />
+            <p class="text-bold bg-light p-2">Text Basics</p>
+
+            <div class="row">
+              <div class="grid-half p-5">
+                <p class="text-tiny">text tiny</p>
+                <p class="text-small">text small</p>
+                <p class="text-center">text center</p>
+                <p class="text-right">text right</p>
+                <p class="text-left">text left</p>
+                <p class="text-lowercase">TEXT LOWERCASE</p>
+                <p class="text-uppercase">text uppercase</p>
+                <p class="text-capitalize">text capitalize</p>
+                <p class="text-normal">text normal</p>
+                <p class="text-bold">text bold</p>
+                <p class="text-italic">text italic</p>
+                <p class="text-bold">
+                  text bold
+                  <span class="text-normal"> text normal i paragraph bold</span>
+                </p>
+              </div>
+              <div class="grid-half">
+                <pre class="lang-html bg-light mt-5">
+                            <code>
+                                <script type="prism-html-markup">
+    <p class="text-tiny">text tiny</p>
+
+    <p class="text-small">text small</p>
+
+    <p class="text-center">text center</p>
+
+    <p class="text-right">text right</p>
+
+    <p class="text-left">text left</p>
+
+    <p class="text-lowercase">TEXT LOWERCASE</p>
+
+    <p class="text-uppercase">text uppercase</p>
+
+    <p class="text-capitalize">text capitalize</p>
+
+    <p class="text-normal">text normal</p>
+
+    <p class="text-bold">text bold</p>
+
+    <p class="text-italik">text italic</p>
+
+    <p class="text-bold">text bold 
+        <span class="text-normal"> 
+            text normal i paragraph bold
+        </span>
+    </p>
+                                </script>
+                            </code>
+                            </pre>
+              </div>
+            </div>
+
+            <hr />
+            <p id="tags" class="text-bold bg-light p-2">atags</p>
+            <div class="row">
+              <div class="grid-half">
+                <p class="my-5">
+                  You can use atags with links, or witout as label for
+                  highlighted, informative information
+                </p>
+                <div class="atags">
+                  <a href="#tags" class="atag"> tag link </a>
+                  <a href="#tags" class="atag"> tag link </a>
+                  <a href="#tags" class="atag"> tag link </a>
+                  <a href="#tags" class="atag bg-red bg-dark-red-hov">
+                    tag link
+                  </a>
+                </div>
+                <p class="mx-5">. . .</p>
+
+                <span class="atag bg-green bg-green-hov r-normal">
+                  used as label
+                </span>
+                <span class="atag bg-gold bg-gold-hov r-large">
+                  used as label
+                </span>
+                <span class="atag bg-dark-red bg-dark-red-hov">
+                  used as label
+                </span>
+
+                <p class="mx-5">. . .</p>
+                <p id="tags" class="text-bold bg-light p-2">tooltip</p>
+                <p class="mx-5">. . .</p>
+                <div class="tooltip-wrap">
+                  <span> hover me, tooltip top</span>
+                  <div class="tooltip tooltip-top">foo bar</div>
+                </div>
+                <p class="mx-5">. . .</p>
+                <div class="tooltip-wrap">
+                  <span> hover me, tooltip bottom</span>
+                  <div class="tooltip tooltip-bottom">foo bar</div>
+                </div>
+                <br />
+              </div>
+              <div class="grid-half">
+                <pre class="lang-html bg-light mt-5">
+                        <code>
+                            <script type="prism-html-markup">
+    <div class="atags">
+        <a href="#tags" class="atag"> tag link </a>
+        <a href="#tags" class="atag"> tag link </a>
+        <a href="#tags" class="atag"> tag link </a>
+        <a href="#tags" class="atag bg-red bg-dark-red-hov"> tag link </a>
+    </div>
+
+    <span class="atag bg-green bg-green-hov r-normal"> used as label </span>
+    <span class="atag bg-gold bg-gold-hov r-large"> used as label </span>
+    <span class="atag bg-dark-red bg-dark-red-hov"> used as label </span>  
+
+    <div class="tooltip-wrap">
+        <span> hover me, tooltip top</span>
+        <div class="tooltip tooltip-top">foo bar</div>
+    </div>
+
+    <div class="tooltip-wrap">
+        <span> hover me, tooltip bottom</span>
+        <div class="tooltip tooltip-bottom">foo bar</div>
+    </div>
+                            </script>
+                        </code>
+                        </pre>
+              </div>
+            </div>
+          </section>
+
+          <br />
+          <hr />
+          <h3 id="tables" class="bg-blue text-white px-5 r-small sh-01">
+            Tables
+          </h3>
+
+          <div class="row">
+            <div class="grid-half">
+              <br />
+              <table>
+                <thead>
+                  <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Super Hero</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Peter</td>
+                    <td>Parker</td>
+                    <td>Spiderman</td>
+                  </tr>
+                  <tr>
+                    <td>Bruce</td>
+                    <td>Wayne</td>
+                    <td>Batman</td>
+                  </tr>
+                  <tr>
+                    <td>Clark</td>
+                    <td>Kent</td>
+                    <td>Superman</td>
+                  </tr>
+                  <tr>
+                    <td>Bruce</td>
+                    <td>Wayne</td>
+                    <td>Batman</td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <hr />
+              <p class="text-bold bg-light p-2">Breadcrumb</p>
+
+              <ul class="breadcrumb">
+                <li>
+                  <a href="#">Home</a>
+                </li>
+                <li>
+                  <a href="#">Profile</a>
+                </li>
+                <li>
+                  <span>Settings</span>
+                </li>
+              </ul>
+              <pre class="lang-html bg-light mt-5">
+                <code>
+                    <script type="prism-html-markup">
+        <ul class="breadcrumb">
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Profile</a>
+            </li>
+            <li>
+                <span>Settings</span>
+            </li>
+        </ul>
+                    </script>
+                </code>
+                </pre>
+            </div>
+            <div class="grid-half">
+              <pre class="lang-html bg-light mt-5"><code>
+<script type="prism-html-markup">
+
+<table>
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Super Hero</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Peter</td>
+            <td>Parker</td>
+            <td>Spiderman</td>
+        </tr>
+        <tr>
+            <td>Bruce</td>
+            <td>Wayne</td>
+            <td>Batman</td>
+        </tr>
+        <tr>
+            <td>Clark</td>
+            <td>Kent</td>
+            <td>Superman</td>
+        </tr>
+        <tr>
+            <td>Bruce</td>
+            <td>Wayne</td>
+            <td>Batman</td>
+        </tr>
+    </tbody>
+</table>
+
+</script>
+            </code></pre>
+            </div>
+          </div>
+
+          <br />
+          <br />
+          <hr />
+          <h3 id="forms" class="bg-blue text-white px-5 r-small sh-01">
+            Forms
+          </h3>
+
+          <div class="row">
+            <div class="grid-half">
+              <h5>form horizontal</h5>
+              <div
+                class="form form-horizontal p-5 border"
+                style="max-width: 400px"
+              >
+                <div class="form-field">
+                  <label class="form-label">Firstname</label>
+                  <input
+                    class="input input-error"
+                    type="text"
+                    placeholder="input error"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Lastname</label>
+                  <input
+                    class="input input-success"
+                    type="text"
+                    placeholder="input success"
+                  />
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Email</label>
+                  <input class="input" type="text" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Password</label>
+                  <input class="input" type="password" />
+                </div>
+                <button class="btn btn-prim">Register</button>
+              </div>
+            </div>
+            <div class="grid-half">
+              <pre class="lang-html bg-light mt-5"><code>
+                <script type="prism-html-markup">
+<div class="form form-horizontal p-5 border" style="max-width: 400px;">
+    <div class="form-field">
+        <label class="form-label">Firstname</label>
+        <input class="input input-error" type="text" placeholder="input error">
+    </div>
+    <div class="form-field">
+        <label class="form-label">Lastname</label>
+        <input class="input input-success" type="text" placeholder="input success">
+    </div>
+    <div class="form-field">
+        <label class="form-label">Email</label>
+        <input class="input" type="text">
+    </div>
+    <div class="form-field">
+        <label class="form-label">Password</label>
+        <input class="input" type="password">
+    </div>
+    <button class="btn btn-prim">Register</button>
+</div>
+                </script>
+            </code></pre>
+            </div>
+          </div>
+
+          <hr />
+          <h5>form</h5>
+          <div class="row">
+            <div class="grid-half">
+              <div class="form border p-5" style="max-width: 400px">
+                <div class="form-field">
+                  <label class="form-label">Username</label>
+                  <input class="input" type="text" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Password</label>
+                  <input class="input" type="password" />
+                </div>
+                <div class="form-field">
+                  <label class="form-label">Questions</label>
+                  <select class="input">
+                    <option value="Option 1">Questions</option>
+                    <option value="Option 2">Admiration</option>
+                    <option value="Option 3">Can I get your number?</option>
+                  </select>
+                </div>
+                <button class="btn btn-prim">Signin</button>
+              </div>
+            </div>
+            <div class="grid-half">
+              <pre class="lang-html bg-light"><code>
+            <script type="prism-html-markup">
+<div class="form border p-5" style="max-width: 400px;">
+    <div class="form-field">
+        <label class="form-label">Username</label>
+        <input class="input" type="text">
+    </div>
+    <div class="form-field">
+        <label class="form-label">Password</label>
+        <input class="input" type="password">
+    </div>
+    <div class="form-field">
+        <label class="form-label">Questions</label>
+        <select class="input">
+            <option value="Option 1">Questions</option>
+            <option value="Option 2">Admiration</option>
+            <option value="Option 3">Can I get your number?</option>
+            </select>
+        </div>
+    <button class="btn btn-prim">Signin</button>
+</div>
+            </script>
+        </code>
+    </pre>
+            </div>
+          </div>
+          <hr />
+          <h4 class="bg-light p-1">check box</h4>
+          <div class="row">
+            <div class="grid-half p-4">
+              <br />
+              <div class="checkbox">
+                <input type="checkbox" id="check1" />
+                <label for="check1">Checkbox default</label>
+              </div>
+              <br />
+              <div class="checkbox red">
+                <input type="checkbox" id="check3" />
+                <label for="check3">Checkbox red</label>
+              </div>
+              <br />
+              <div class="checkbox teal">
+                <input type="checkbox" id="check5" />
+                <label for="check5">Checkbox teal</label>
+              </div>
+              <br />
+              <div class="checkbox green">
+                <input type="checkbox" id="check4" />
+                <label for="check4">Checkbox green</label>
+              </div>
+              <br />
+              <div class="checkbox">
+                <input type="checkbox" id="check2" disabled checked />
+                <label for="check2">Checkbox disabled</label>
+              </div>
+            </div>
+            <div class="grid-half p-4">
+              <pre class="lang-html bg-light"><code>
+            <script type="prism-html-markup">
+<div class="checkbox">
+    <input type="checkbox" id="check1" />
+    <label for="check1">Checkbox</label>
+</div>
+
+<div class="checkbox red">
+    <input type="checkbox" id="check3" />
+    <label for="check3">Checkbox</label>
+</div>
+
+<div class="checkbox teal">
+    <input type="checkbox" id="check3" />
+    <label for="check3">Checkbox teal</label>
+</div>
+
+<div class="checkbox green">
+    <input type="checkbox" id="check4" />
+    <label for="check4">Checkbox</label>
+</div>
+
+<div class="checkbox">
+    <input type="checkbox" id="check2" disabled checked />
+    <label for="check2">Checkbox</label>
+</div>
+            </script>
+        </code></pre>
+            </div>
+          </div>
+          <hr />
+          <h4 class="bg-light p-1">radio</h4>
+          <div class="row">
+            <div class="grid-half p-4">
+              <br />
+              <div class="radio red">
+                <input type="radio" id="radio1" name="myradio1" />
+                <label for="radio1">Radio red</label>
+              </div>
+              <br />
+              <div class="radio green">
+                <input type="radio" id="radio2" name="myradio1" checked />
+                <label for="radio2">Radio green</label>
+              </div>
+              <br />
+              <div class="radio teal">
+                <input type="radio" id="radio5" name="myradio1" checked />
+                <label for="radio5">Radio teal</label>
+              </div>
+              <br />
+              <div class="radio">
+                <input type="radio" id="radio3" name="myradio1" checked />
+                <label for="radio3">Radio default</label>
+              </div>
+              <br />
+              <div class="radio">
+                <input
+                  type="radio"
+                  id="radio4"
+                  name="myradio1"
+                  disabled
+                  checked
+                />
+                <label for="radio4">Radio disabled</label>
+              </div>
+            </div>
+            <div class="grid-half">
+              <pre class="lang-html bg-light"><code>
+            <script type="prism-html-markup">
+<div class="radio red">
+    <input type="radio" id="radio1" name="myradio1" />
+    <label for="radio1">Radio red</label>
+    </div>
+    <div class="radio green">
+    <input type="radio" id="radio2" name="myradio1" checked />
+    <label for="radio2">Radio green</label>
+    </div>
+    <div class="radio teal">
+        <input type="radio" id="radio5" name="myradio1" checked />
+        <label for="radio5">Radio teal</label>
+    </div>
+    <div class="radio">
+    <input type="radio" id="radio3" name="myradio1" checked />
+    <label for="radio3">Radio</label>
+    </div>
+    <div class="radio">
+    <input type="radio" id="radio4" name="myradio1" disabled />
+    <label for="radio4">Radio Disabled</label>
+</div>
+            </script>
+        </code></pre>
+            </div>
+          </div>
+          <hr />
+          <h4 class="bg-light p-1">progress bar</h4>
+          <div class="row">
+            <div class="grid-half">
+              <p class="m-5">. . .</p>
+              <div class="progress">
+                <div class="indeterminate bg-light-blue"></div>
+              </div>
+              <p class="m-5">. . .</p>
+              <div class="progress">
+                <div class="determinate bg-green" style="width: 25%"></div>
+              </div>
+              <p class="m-5">. . .</p>
+            </div>
+            <div class="grid-half">
+              <pre class="lang-html bg-light"><code>
+            <script type="prism-html-markup">
+    <div class="progress">
+        <div class="indeterminate bg-light-blue"></div>
+    </div>
+    <div class="progress" >
+        <div class="determinate bg-green" style="width:25%"></div>
+    </div>
+            </script>
+        </code></pre>
+            </div>
+          </div>
+          <hr />
+
+
+          <h3 id="navbar" class="bg-blue text-white px-5 r-small sh-01">
+            Navbar
+          </h3>
+<p>.</p>
+          <section class="mt-5 p-4 border">
+
+            <header class="navbar border p-2" >
+              <section class="navbar-section">
+                <a href="#navbar" class="btn bo-0 text-white-hov bg-light-teal-hov">Docs</a>
+                <a href="#navbar" class="btn text-gold-hov bo-0 ripple">Examples</a>
+              </section>
+              <section class="navbar-center">
+                <h5 class="m-0 text-light">SOVA.css</h5>
+              </section>
+              <section class="navbar-section">
+                <a href="#navbar" class="btn bo-0 bg-light-hov">Twitter</a>
+                <a href="#navbar" class="btn bg-light-hov">GitHub  </a>
+              </section>
+            </header>
+
+            <p>.</p>
+            <pre class="lang-html bg-light mt-5">
+              <code>
+                  <script type="prism-html-markup">
+            <header class="navbar border p-2" >
+              <section class="navbar-section">
+                <a href="#navbar" class="btn bo-0 text-white-hov bg-light-teal-hov">Docs</a>
+                <a href="#navbar" class="btn text-gold-hov bo-0 ripple">Examples</a>
+              </section>
+              <section class="navbar-center">
+                <h5 class="m-0 text-light">SOVA.css</h5>
+              </section>
+              <section class="navbar-section">
+                <a href="#navbar" class="btn bo-0 bg-light-hov">Twitter</a>
+                <a href="#navbar" class="btn bg-light-hov">GitHub  </a>
+              </section>
+            </header>
+                  </script>
+              </code>
+              </pre>
+<p>.</p>
+          </section>
+<p>.</p>
+          <hr />
+          <h3 id="buttons" class="bg-blue text-white px-5 r-small sh-01">
+            Buttons
+          </h3>
+          <div class="row py-5">
+            <div class="grid-half p-5">
+              <p class="text-center text-light">. . .</p>
+              <button class="btn">button</button>
+              <button class="btn btn-red">btn red</button>
+              <button class="btn btn-green">btn red</button>
+              <span class="spinner spin-21 text-red"></span>
+              <p class="text-center text-light">. . .</p>
+              <button class="btn btn-prim">btn prim</button>
+              <button class="btn r-xlarge">btn rounded</button>
+              <button class="btn btn-teal ripple">btn teal ripple</button>
+              <p class="text-center text-light">. . .</p>
+              <a href="#buttons" class="btn btn-prim">link btn</a>
+              <button>spiner <span class="spinner spin-12"></span></button>
+              <button class="btn btn-prim loader ripple">loader</button>
+              <p class="text-center text-light">. . .</p>
+              <button
+                class="
+                  btn
+                  r-xlarge
+                  bo-teal-hov
+                  text-teal-hov
+                  bo-light-teal
+                  text-light-teal
+                "
+              >
+                combine classes
+              </button>
+              <button
+                class="
+                  btn
+                  bo-dark-blue-hov
+                  bg-dark-blue-hov
+                  text-white-hov
+                  loader
+                "
+              >
+                combine classes
+              </button>
+              <p class="text-center text-light">. . .</p>
+              <p class="text-bold text-blue text-small">button group</p>
+              <div class="btn-group">
+                <button class="btn btn-prim ripple">first</button>
+                <button class="btn btn-prim ripple">second</button>
+                <button class="btn btn-prim ripple">third</button>
+              </div>
+            </div>
+            <div class="grid-half py-5">
+              <pre class="lang-html bg-light mt-5">
+            <code>
+                <script type="prism-html-markup">
+<button class="btn">button</button> 
+<button class="btn btn-red">btn red</button>
+<button class="btn btn-green">btn red</button>
+<span class="spinner spin-21 text-red"></span>
+
+<button class="btn btn-prim">btn prim</button>
+<button class="btn r-xlarge">btn rounded</button>
+<button class="btn btn-teal ripple">btn teal ripple</button>
+
+<a href="#buttons" class="btn btn-prim">link btn</a>
+<button>spiner <span class="spinner spin-12"></span></button>
+<button class="btn btn-prim loader ripple">loader</button>
+
+<button class="btn r-xlarge bo-teal-hov text-teal-hov bo-light-teal text-light-teal">combine classes</button>
+<button class="btn bo-dark-blue-hov bg-dark-blue-hov text-white-hov loader">combine classes</button>
+
+<div class="btn-group">
+    <button class="btn btn-prim ripple">first</button>
+    <button class="btn btn-prim ripple">second</button>
+    <button class="btn btn-prim ripple">third</button>
+</div>
+                </script>
+            </code>
+            </pre>
+            </div>
+          </div>
+          <hr />
+          <h3 id="grids" class="bg-blue text-white px-5 r-small sh-01">
+            Grids
+          </h3>
+
+          <section class="border m-5 p-5">
+            The
+            <code class="text-red text-bold px-2" style="font-size: 14px"
+              >.container</code
+            >
+            class centers content on the page and restricts it to a maximum
+            width.
+            <pre class="lang-html bg-light mt-5">
+        <code>
+            <script type="prism-html-markup">
+<div class="container">
+    <p>The <code>.container</code> class centers content on the page and restricts it to a maximum width.</p>
+</div>
+            </script>
+        </code>
+        </pre>
+            <br />
+            <p>
+              To create a grid, add a
+              <code class="text-red text-bold px-2" style="font-size: 14px"
+                >&lt;div&gt;</code
+              >
+              with a
+              <code class="text-red text-bold px-2" style="font-size: 14px"
+                >.row</code
+              >
+              class. You can create grids within a row by creating
+              <code class="text-red text-bold px-2" style="font-size: 14px"
+                >&lt;div&gt;</code
+              >
+              elements with the
+              <code class="text-red text-bold px-2" style="font-size: 14px"
+                >.grid-*</code
+              >
+              class.
+            </p>
+            <br />
+
+            <div class="row">
+              <div class="grid-third grid-highlight">.grid-third</div>
+              <div class="grid-two-thirds grid-highlight">.grid-two-thirds</div>
+            </div>
+            <div class="row">
+              <div class="grid-fourth grid-highlight">.grid-fourth</div>
+              <div class="grid-three-fourths grid-highlight">
+                .grid-three-fourths
+              </div>
+            </div>
+            <div class="row">
+              <div class="grid-half grid-highlight">.grid-half</div>
+              <div class="grid-half grid-highlight">.grid-half</div>
+            </div>
+            <div class="row">
+              <div class="grid-fourth grid-highlight">.grid-fourth</div>
+              <div class="grid-half grid-highlight">.grid-half</div>
+              <div class="grid-fourth grid-highlight">.grid-fourth</div>
+            </div>
+
+            <pre class="lang-html bg-light mt-5">
+    <code>
+        <script type="prism-html-markup">
+<div class="row">
+    <div class="grid-third">.grid-third</div>
+    <div class="grid-two-thirds">.grid-two-thirds</div>
+</div>
+
+<div class="row">
+    <div class="grid-fourth">.grid-fourth</div>
+    <div class="grid-three-fourths">.grid-three-fourths</div>
+</div>
+
+<div class="row">
+    <div class="grid-half">.grid-half</div>
+    <div class="grid-half">.grid-half</div>
+</div>
+
+<div class="row">
+    <div class="grid-fourth">.grid-fourth</div>
+    <div class="grid-half">.grid-half</div>
+    <div class="grid-fourth">.grid-fourth</div>
+</div>
+        </script>
+    </code>
+</pre>
+
+            <br />
+            <p>
+              You can double the space between columns in a grid by adding the
+              <code class="text-red text-bold px-2" style="font-size: 14px"
+                >.row-gap-large</code
+              >
+              class, or remove it altogether by adding the
+              <code class="text-red text-bold px-2" style="font-size: 14px"
+                >.row-no-gap</code
+              >
+              class.
+            </p>
+            <br />
+            <div class="row row-gap-large">
+              <div class="grid-third grid-highlight">.grid-third</div>
+              <div class="grid-third grid-highlight">.grid-third</div>
+              <div class="grid-third grid-highlight">.grid-third</div>
+            </div>
+            <div class="row row-no-gap">
+              <div class="grid-third grid-highlight">.grid-third</div>
+              <div class="grid-third grid-highlight">.grid-third</div>
+              <div class="grid-third grid-highlight">.grid-third</div>
+            </div>
+            <pre class="lang-html bg-light mt-5">
+    <code>
+        <script type="prism-html-markup">
+    <div class="row row-gap-large">
+        <div class="grid-third">.grid-third</div>
+        <div class="grid-third">.grid-third</div>
+        <div class="grid-third">.grid-third</div>
+    </div>
+    
+    <div class="row row-no-gap">
+        <div class="grid-third">.grid-third</div>
+        <div class="grid-third">.grid-third</div>
+        <div class="grid-third">.grid-third</div>
+    </div>
+        </script>
+    </code>
+    </pre>
+            <br />
+            <p>
+              The
+              <code class="text-red text-bold px-2" style="font-size: 14px"
+                >.row-auto</code
+              >
+              class will scale the content to fit whatever space is available.
+            </p>
+            <br />
+            <div class="row row-auto">
+              <div class="grid-highlight">Auto Scales</div>
+              <div class="grid-highlight">Auto Scales</div>
+              <div class="grid-highlight">Auto Scales</div>
+              <div class="grid-highlight">Auto Scales</div>
+              <div class="grid-highlight">Auto Scales</div>
+            </div>
+            <pre class="lang-html bg-light mt-5">
+        <code>
+            <script type="prism-html-markup">
+    <div class="row row-auto">
+        <div>Auto Scales</div>
+        <div>Auto Scales</div>
+        <div>Auto Scales</div>
+        <div>Auto Scales</div>
+        <div>Auto Scales</div>
+    </div>
+            </script>
+        </code>
+        </pre>
+          </section>
+          <hr />
+          <h3 id="cards" class="bg-blue text-white px-5 r-small sh-01">
+            Cards
+          </h3>
+
+          <section class="border m-5 p-5">
+            <p>Cards are flexible content containers.</p>
+            <div
+              class="card border p-5 sh-02"
+              style="width: 400px; margin: 0 auto"
+            >
+              <div class="card-image">
+                <img
+                  src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg"
+                  class="img-responsive"
+                />
+              </div>
+              <div class="card-header">
+                <div class="card-title h5">title</div>
+                <div class="card-subtitle text-light">subtitle</div>
+              </div>
+              <div class="card-body">
+                <p class="p-1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Dolorum nisi exercitationem rem, ipsam soluta nobis illum
+                  repellendus labore doloremque saepe? Hic consectetur amet
+                  expedita cumque repellendus sapiente quos, illum id.
+                </p>
+              </div>
+              <div class="card-footer">
+                <button class="btn ripple">button</button>
+              </div>
+            </div>
+
+            <pre class="lang-html bg-light mt-5">
+        <code>
+            <script type="prism-html-markup">
+    <div class="card border p-5 sh-02" style="width: 400px; margin: 0 auto">
+        <div class="card-image">
+          <img src="https://picturepan2.github.io/spectre/img/macos-sierra.jpg" class="img-responsive">
+        </div>
+
+        <div class="card-header">
+          <div class="card-title h5">title</div>
+          <div class="card-subtitle text-light">subtitle</div>
+        </div>
+
+        <div class="card-body">
+          <p class="p-1">Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Dolorum nisi exercitationem rem, ipsam soluta nobis illum repellendus labore doloremque saepe?
+          Hic consectetur amet expedita cumque repellendus sapiente quos, illum id.</p>
+        </div>
+
+        <div class="card-footer">
+          <button class="btn"> button</button>
+        </div>
+    </div>
+            </script>
+        </code>
+        </pre>
+          </section>
+          <hr />
+          <h3 id="panel" class="bg-blue text-white px-5 r-small sh-01">
+            Panel
+          </h3>
+
+          <section class="border m-5 p-5">
+            <p>
+              Panels are flexible view container with auto-expand content
+              section.
+            </p>
+            <br />
+
+            <div
+              class="panel sh-01 r-small border"
+              style="width: 450px; height: 70vh; margin: 0 auto"
+            >
+              <div class="panel-header p-5">
+                <div class="panel-title pl-2 h4 m-0">Panel title</div>
+              </div>
+              <div class="panel-nav px-5 text-light">
+                <!-- navigation components: tabs, breadcrumbs or pagination -->
+                panel navigation section, can be omitted ...
+              </div>
+              <div class="panel-body p-5 mt-5 text-small bg-white">
+                <!-- contents -->
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  id possimus quidem aut numquam dolor ullam illo. Quisquam qui,
+                  facere odit error illum quae eos pariatur atque corrupti,
+                  temporibus dolorum?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  id possimus quidem aut numquam dolor ullam illo. Quisquam qui,
+                  facere odit error illum quae eos pariatur atque corrupti,
+                  temporibus dolorum?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  id possimus quidem aut numquam dolor ullam illo. Quisquam qui,
+                  facere odit error illum quae eos pariatur atque corrupti,
+                  temporibus dolorum?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  id possimus quidem aut numquam dolor ullam illo. Quisquam qui,
+                  facere odit error illum quae eos pariatur atque corrupti,
+                  temporibus dolorum?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  id possimus quidem aut numquam dolor ullam illo. Quisquam qui,
+                  facere odit error illum quae eos pariatur atque corrupti,
+                  temporibus dolorum?
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit
+                  id possimus quidem aut numquam dolor ullam illo. Quisquam qui,
+                  facere odit error illum quae eos pariatur atque corrupti,
+                  temporibus dolorum?
+                </p>
+              </div>
+              <div class="panel-footer">
+                <!-- buttons or inputs -->
+                <button class="btn m-0">footer button</button>
+              </div>
+            </div>
+            <br />
+            <pre class="lang-html bg-light mt-5">
+        <code>
+            <script type="prism-html-markup">
+<div class="panel sh-01 r-small border" style="width: 450px;height: 70vh;margin: 0 auto">
+    <div class="panel-header p-5">
+        <div class="panel-title pl-2 h4 m-0">Panel title</div>
+    </div>
+    <div class="panel-nav px-5 text-light">
+        <!-- navigation components: tabs, breadcrumbs or pagination -->
+        panel navigation section, can be omitted ...
+    </div>
+    <div class="panel-body p-5 mt-5 text-small bg-white">
+        <!-- contents -->
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id possimus quidem aut numquam dolor ullam illo. Quisquam qui, facere odit error illum quae eos pariatur atque corrupti, temporibus dolorum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id possimus quidem aut numquam dolor ullam illo. Quisquam qui, facere odit error illum quae eos pariatur atque corrupti, temporibus dolorum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id possimus quidem aut numquam dolor ullam illo. Quisquam qui, facere odit error illum quae eos pariatur atque corrupti, temporibus dolorum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id possimus quidem aut numquam dolor ullam illo. Quisquam qui, facere odit error illum quae eos pariatur atque corrupti, temporibus dolorum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id possimus quidem aut numquam dolor ullam illo. Quisquam qui, facere odit error illum quae eos pariatur atque corrupti, temporibus dolorum?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit id possimus quidem aut numquam dolor ullam illo. Quisquam qui, facere odit error illum quae eos pariatur atque corrupti, temporibus dolorum?</p>
+    </div>
+    <div class="panel-footer">
+        <!-- buttons or inputs -->
+        <button class="btn m-0 ">footer button</button>
+    </div>
+</div>
+            </script>
+        </code>
+        </pre>
+          </section>
+          <hr />
+          <h3 id="shadows" class="bg-blue text-white px-5 r-small sh-01">
+            Box Shadows
+          </h3>
+
+          <section class="border m-5 p-5">
+            <div class="box flex-row flex-around border p-5">
+              <div
+                class="box border m-2 p-2 sh-01"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-01</span></p>
+                </div>
+              </div>
+
+              <div
+                class="box border m-2 p-3 sh-02"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-02</span></p>
+                </div>
+              </div>
+
+              <div
+                class="box border m-2 p-2 sh-03"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-03</span></p>
+                </div>
+              </div>
+
+              <div
+                class="box border m-2 p-2 sh-04"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-04</span></p>
+                </div>
+              </div>
+
+              <div
+                class="box border m-2 p-2 sh-06"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-06</span></p>
+                </div>
+              </div>
+            </div>
+
+            <div class="box flex-row flex-around border p-5">
+              <div
+                class="box border m-2 p-3 sh-08"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-08</span></p>
+                </div>
+              </div>
+
+              <div
+                class="box border m-2 p-2 sh-12"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-12</span></p>
+                </div>
+              </div>
+
+              <div
+                class="box border m-2 p-2 sh-16"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-16</span></p>
+                </div>
+              </div>
+
+              <div
+                class="box border m-2 p-2 sh-24"
+                style="width: 152px; height: 150px"
+              >
+                <div class="p-4">
+                  <p>shadow</p>
+                  <br />
+                  <p>class: <span class="text-bold">sh-24</span></p>
+                </div>
+              </div>
+            </div>
+
+            <pre class="lang-html bg-light mt-5">
+    <code>
+        <script type="prism-html-markup">
+<div class="box flex-row flex-around border p-5">
+
+<div class="box border m-2 p-2 sh-01" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-01</p>
+    </div>
+</div>
+
+<div class="box border m-2 p-3 sh-02" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-02</p>
+    </div>
+</div>
+
+<div class="box border m-2 p-2 sh-03" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-03</p>
+    </div>
+</div>
+
+<div class="box border m-2 p-2 sh-04" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-04</p>
+    </div>
+</div>
+
+<div class="box border m-2 p-2 sh-06" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-06</p>
+    </div>
+</div>
+
+</div>
+
+<div class="box flex-row flex-around border p-5">
+
+<div class="box border m-2 p-3 sh-08" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-08</p>
+    </div>
+</div>
+
+<div class="box border m-2 p-2 sh-12" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-12</p>
+    </div>
+</div>
+
+<div class="box border m-2 p-2 sh-16" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-16</p>
+    </div>
+</div>
+
+<div class="box border m-2 p-2 sh-24" style="width: 152px; height: 150px;">
+    <div>
+        <p>shadow</p>
+        <br>
+        <p>class: sh-24</p>
+    </div>
+</div>
+
+</div>
+        </script>
+    </code>
+    </pre>
+          </section>
+          <hr />
+          <h3 id="modal" class="bg-blue text-white px-5 r-small sh-01">
+            Modal
+          </h3>
+          <br />
+          <div class="row">
+            <div class="grid-fourth p-5">
+              <p>.</p>
+              <button id="open-modal" class="btn btn-teal ripple">
+                Open modal
+              </button>
+              <p>.</p>
+              <p class="text-small">
+                Add <b>active</b> class to <b> div.modal </b>, to open modal, and
+                remove <b>active</b> clasee to hide the modal...
+              </p>
+              <p>.</p>
+              <button id="open-modal-small" class="btn btn-teal ripple">
+                Open modal small
+              </button>
+              <p>.</p>
+              <!-- modal 
+        <div class="modal active" id="modal-el"> to open
+        -->
+              <div class="modal" id="modal-el">
+                <div class="modal-overlay" aria-label="Close"></div>
+                <div class="modal-container">
+                  <div class="modal-header">
+                    <div class="modal-title h4">Modal title</div>
+                    <button id="btn-close-modal" class="btn btn-close"></button>
+                  </div>
+                  <div class="modal-body">
+                    <div class="content">
+                      <!-- content here -->
+                      <p text-left>
+                        som modal conten, or input elements, etc ... close modal
+                        on <b>x</b> or <b>button close</b>!
+                      </p>
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <button class="button text-teal bo-teal ripple">
+                      Save
+                    </button>
+                    <button id="close-modal" class="button btn-prim ripple">
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- /modal -->
+            </div>
+
+            <div class="grid-three-fourths">
+              <pre class="lang-html bg-light mt-5">
+            <code>
+                <script type="prism-html-markup">
+<!--  
+    <div class="modal active" id="modal-el"> to open
+        for small Modal
+    <div class="modal modal-sm active" id="modal-el"> 
+-->
+<div class="modal" id="modal-el">
+    
+    <div class="modal-container">
+        <div class="modal-header">
+        
+        <div class="modal-title h4">Modal title</div>
+        <button id="btn-close-modal" class="btn btn-close"></button>
+        
+        </div>
+        <div class="modal-body">
+        <div class="content">
+            <!-- content here -->
+            <p text-left>som modal conten, or input elements, etc ... </p>
+        </div>
+        </div>
+        <div class="modal-footer">
+        <button class="button text-teal bo-teal ripple">Save</button> 
+        <button id="close-modal" class="button btn-prim ripple">Close</button>
+        </div>
+ </div>
+</div>
+                </script>
+            </code>
+            </pre>
+            </div>
+          </div>
+          <hr />
+<h3 id="colors" class="bg-blue text-white px-5 r-small sh-01">
+Colors
+</h3>
+<br />
+
+<section>
+    <div class="box flex-row flex-around border p-5">
+        <div class="box border m-2 p-2 bg-light" style="width: 152px;">
+          <div class="p-4">
+            <p class="p-2 bg-light border sh-02"><b>text colors</b></p>
+            <p class="text-dark-red text-bold">text-dark-red</p>
+            <p class="text-red text-bold">text-red</p>
+            <p class="text-blue text-bold">text-blue</p>
+            <p class="text-dark-blue text-bold">text-dark-blue</p>
+            <p class="text-light-blue text-bold">text-light-blue</p>
+            <p class="text-green text-bold">text-green</p>
+            <p class="text-dark-green text-bold">text-dark-green</p>
+            <p class="text-teal text-bold">text-teal</p>
+            <p class="text-light-teal text-bold">text-light-teal</p>
+            <p class="text-dark text-bold">text-dark</p>
+            <p class="text-light text-bold">text-light</p>
+            <p class="text-white bg-dark text-bold">text-white</p>
+            <p class="text-gold text-bold">text-gold</p>
+
+          </div>
+        </div>
+
+        <div class="box border m-2 p-2 bg-light" style="width: 152px;">
+            <div class="p-4">
+              <p class="p-2 bg-light border sh-02"><b>text colors on hover</b></p>
+              <p class="text-dark-red-hov text-bold">text-dark-red-hov</p>
+              <p class="text-red-hov text-bold">text-red-hov</p>
+              <p class="text-blue-hov text-bold">text-blue</p>
+              <p class="text-dark-blue-hov text-bold">text-dark-blue-hov</p>
+              <p class="text-light-blue-hov text-bold">text-light-blue-hov</p>
+              <p class="text-green-hov text-bold">text-green-hov</p>
+              <p class="text-dark-green-hov text-bold">text-dark-green-hov</p>
+              <p class="text-teal-hov text-bold">text-teal-hov</p>
+              <p class="text-light-teal-hov text-bold">text-light-teal-hov</p>
+              <p class="text-light text-dark-hov text-bold">text-dark-hov</p>
+              <p class="text-light-hov text-bold">text-light-hov</p>
+              <p class="text-white-hov bg-dark text-bold">text-white-hov</p>
+              <p class="text-gold-hov text-bold">text-gold-hov</p>
+  
+            </div>
+          </div>
+
+
+
+        <div class="box border m-2 p-2 bg-light" style="width: 152px;">
+            <div class="p-4">
+                <p class="p-2 bg-light border sh-02"><b>background colors</b></p>
+              <p class="bg-dark-red text-white text-bold">bg-dark-red</p>
+              <p class="bg-red text-white text-bold">bg-red</p>
+              <p class="bg-blue text-white text-bold">bg-blue</p>
+              <p class="bg-dark-blue text-white text-bold">bg-dark-blue</p>
+              <p class="bg-light-blue text-bold">bg-light-blue</p>
+              <p class="bg-green text-bold">bg-green</p>
+              <p class="bg-dark-green text-white text-bold">bg-dark-green</p>
+              <p class="bg-teal text-bold">bg-teal</p>
+              <p class="bg-light-teal text-bold">bg-light-teal</p>
+              <p class="bg-dark text-light text-bold">bg-dark</p>
+              <p class="bg-light text-bold">bg-light</p>
+              <p class="bg-white text-dark text-bold">bg-white</p>
+              <p class="bg-gold text-bold">bg-gold</p>
+  
+            </div>
+          </div>
+
+          
+        <div class="box border m-2 p-2 bg-light" style="width: 152px;">
+            <div class="p-4">
+                <p class="p-2 bg-light border sh-02"><b>background colors on hover</b></p>
+              <p class="bg-dark-red-hov text-white text-bold">bg-dark-red-hov</p>
+              <p class="bg-red-hov text-white text-bold">bg-red-hov</p>
+              <p class="bg-blue-hov text-white text-bold">bg-blue-hov</p>
+              <p class="bg-dark-blue-hov text-white text-bold">bg-dark-blue-hov</p>
+              <p class="bg-light-blue-hov text-bold">bg-light-blue-hov</p>
+              <p class="bg-green-hov text-bold">bg-green-hov</p>
+              <p class="bg-dark-green-hov text-white text-bold">bg-dark-green-hov</p>
+              <p class="bg-teal-hov text-bold">bg-teal-hov</p>
+              <p class="bg-light-teal-hov text-bold">bg-light-teal-hov</p>
+              <p class="bg-dark-hov text-light text-bold">bg-dark-hov</p>
+              <p class="bg-green bg-light-hov text-bold">bg-light-hov</p>
+              <p class="bg-dark bg-white-hov text-dark text-bold">bg-white-hov</p>
+              <p class="bg-gold-hov text-bold">bg-gold-hov</p>
+  
+            </div>
+          </div>
+
+        <!--/-->
+    </div>
+
+<p>.</p>
+<p>There is <b>text-</b>color<b>-foc</b>, <b>text-</b>color<b>-act</b>, <b>bg-</b>color<b>-foc</b>, <b>bg-</b>color<b>-act</b>...</p>
+<p> <b>*-foc</b>  and  <b>*-act</b> are for focus and active state...Colors are the same as in examples (*-red, *-dark-red ....etc)</p>
+<p>There is also <b>bo-</b>  class for borders. Pattern is <b>bo-</b>color, <b>bo-</b>color<b>-hov</b>, <b>bo-</b>color<b>-foc</b>, and <b>bo-</b>color<b>-act</b>. Color value are the sane (red,dark-red... etc..)</p>
+<p> <b>bo-0 </b>means no border </p>
+</section>
+<hr>
+<h3 id="helpers" class="bg-blue text-white px-5 r-small sh-01">
+    Helpers
+    </h3>
+<br />
+
+<section>
+    <p class="text-bold bg-light p-2">Margins and Paddings</p>
+    There is margin and padding class helpers.
+    Pattern is:
+    <ul>
+        <li>p- : for all paddings</li>
+        <li>pl- :  for padding-left</li>
+        <li>pr- : for padding-right</li>
+        <li>pt- : for padding-top</li>
+        <li>pb- : for padding-bottom</li>
+        <li>px- : for padding-left and padding-right</li>
+        <li>py- : for padding-bottom and padding-top</li>
+    </ul>
+    Values are from <b>0</b> to <b>5</b>, where <b>0</b> is no padding <span class="text-tiny"> ( margin )</span> ( padding: 0; )
+    <p>.</p>
+    Same applies for margin, just instead of p , you use m ( m-0, mt-4, etc...)
+    <p>.</p>
+    <br>
+    <p class="text-bold bg-light p-2">Raius</p>
+    <p>Classes: <b>circle</b>, <b> r-tiny</b>, <b>r-small</b>, <b>r-normal</b>, <b>r-medium</b>, <b>r-large</b>, <b>r-xlarge</b> and <b>r-xxlarge</b></p>
+    <br>
+    <p class="text-bold bg-light p-2">Cursor</p>
+    <p>Classes: <b>c-hand</b>, <b>c-move</b>, <b>c-zoom-in</b>, <b>c-zoom-out</b>, <b>c-not-allowed</b>, <b>c-auto</b></p>
+    <p>.</p>
+    <p class="text-bold bg-light p-2">Position</p>
+    <p>Position: <b>p-fixed</b>, <b>p-relative</b>, <b>p-absolute</b>, <b>p-sticy</b>, <b>p-centered</b></p>
+    <p>.</p>
+    <p class="text-bold bg-light p-2">Display</p>
+    <p>Display: <b>d-block</b>, <b>d-inline</b>, <b>d-inline-block</b>, <b>d-grid</b>, <b>d-table</b></p>
+    <p><b>d-table-row</b>, <b>d-table-cell</b>, <b>d-flex</b>, <b>d-inline-flex</b>, <b>d-none</b></p>
+    <p>.</p>
+    <p class="text-bold bg-light p-2">Floats</p>
+    <p><b>float-left</b>, <b>float-right</b>, <b>float-center</b>, <b>clearfix</b></p>
+    <p>.</p>
+</section>
+<hr>
+<h3 id="dark" class="bg-blue text-white px-5 r-small sh-01">
+Dark mode support
+</h3>
+<br />
+
+<section class="bg-dark text-light p-5">
+
+  <h2 class="text-dark-blue mt-1">Dark mode support</h2>
+
+  <hr class="bo-light-blue mt-0">
+
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus nam a tenetur sit id possimus laudantium corrupti error! Voluptatem quasi ex nobis tempore corrupti pariatur ad placeat sunt minus eum!</p>
+
+  <hr class="bo-teal">
+
+  <div class="form form-horizontal p-5 border bo-0 bg-dp1 r-normal sh-04" style="max-width: 400px;">
+    <div class="form-field">
+        <label class="form-label text-light-teal">Firstname</label>
+        <input class="input input-error bg-dark bg-dp" type="text" placeholder="input error">
+    </div>
+    <div class="form-field">
+        <label class="form-label text-light-teal">Lastname</label>
+        <input class="input input-success bg-dark bg-dp3" type="text" placeholder="input success">
+    </div>
+    <div class="form-field">
+        <label class="form-label text-light-teal">Email</label>
+        <input class="input bg-dark bg-dp" type="text">
+    </div>
+    <div class="form-field">
+        <label class="form-label text-light-teal">Password</label>
+        <input class="input bg-dark bg-dp" type="password">
+    </div>
+    <button class="btn bo-teal text-teal text-light-teal-hov text-light-teal-foc ripple bo-light-teal-hov">Register</button>
+</div>
+
+  <hr class="bo-teal">
+
+  <p class="text-teal p-4 bg-dp2 sh-04">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus nam a tenetur sit id possimus laudantium corrupti error! Voluptatem quasi ex nobis tempore corrupti pariatur ad placeat sunt minus eum!</p>
+
+  <p class="text-light-blue bg-dp1 p-4 sh-04">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus nam a tenetur sit id possimus laudantium corrupti error! Voluptatem quasi ex nobis tempore corrupti pariatur ad placeat sunt minus eum!</p>
+
+  <hr>
+  <pre class="lang-html bg-light mt-5">
+    <code>
+        <script type="prism-html-markup">
+<section class="bg-dark text-light p-5">
+
+  <h2 class="text-dark-blue mt-1">Dark mode support</h2>
+
+  <hr class="bo-light-blue mt-0">
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Voluptatibus nam a tenetur sit id possimus laudantium corrupti error! 
+      Voluptatem quasi ex nobis tempore corrupti pariatur ad placeat sunt minus eum!</p>
+  
+    <hr class="bo-teal">
+  
+    <div class="form form-horizontal p-5 border bo-0 bg-dp1 r-normal sh-04" style="max-width: 400px;">
+      <div class="form-field">
+          <label class="form-label text-light-teal">Firstname</label>
+          <input class="input input-error bg-dark bg-dp" type="text" placeholder="input error">
+      </div>
+      <div class="form-field">
+          <label class="form-label text-light-teal">Lastname</label>
+          <input class="input input-success bg-dark bg-dp3" type="text" placeholder="input success">
+      </div>
+      <div class="form-field">
+          <label class="form-label text-light-teal">Email</label>
+          <input class="input bg-dark bg-dp" type="text">
+      </div>
+      <div class="form-field">
+          <label class="form-label text-light-teal">Password</label>
+          <input class="input bg-dark bg-dp" type="password">
+      </div>
+      <button class="btn bo-teal text-teal text-light-teal-hov text-light-teal-foc ripple bo-light-teal-hov">Register</button>
+  </div>
+  
+    <hr class="bo-teal">
+  
+    <p class="text-teal p-4 bg-dp2 sh-04">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Voluptatibus nam a tenetur sit id possimus laudantium corrupti error! 
+      Voluptatem quasi ex nobis tempore corrupti pariatur ad placeat sunt minus eum!</p>
+  
+    <p class="text-light-blue bg-dp1 p-4 sh-04">Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Voluptatibus nam a tenetur sit id possimus laudantium corrupti error! 
+      Voluptatem quasi ex nobis tempore corrupti pariatur ad placeat sunt minus eum!</p>
+
+</section>          
+        </script>
+    </code>
+    </pre>
+</section>
+<br>
+<hr class="mb-0">
+
+<div class="d-block mt-0 mb-5" style="width: 99%;">
+  <p class="text-tiny text-light text-center"> SOVA.css 2021</p>
+</div>
+
+        </main>
+      </div>
+    </div>
+    <script src="./prism/prism.js" defer></script>
+
+    <script>
+      var sections = [];
+
+      function debounce(func, timeout = 200) {
+        let timer;
+        return (...args) => {
+          clearTimeout(timer);
+          timer = setTimeout(() => {
+            func.apply(this, args);
+          }, timeout);
+        };
+      }
+
+      function offset(el) {
+        var rect = el.getBoundingClientRect(),
+          scrollLeft =
+            window.pageXOffset || document.documentElement.scrollLeft,
+          scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return { top: rect.top + scrollTop, left: rect.left + scrollLeft };
+      }
+
+      const processChange = debounce(function () {
+        chkPosition();
+      });
+
+      function getSections() {
+        var sec = document.querySelectorAll("h3[id]");
+
+        sec.forEach(function (currentValue, currentIndex, listObj) {
+          sections.push(currentValue.getAttribute("id"));
+        });
+      }
+
+      function chkPosition() {
+        sections.forEach((item) => {
+          active = [];
+
+          let el = document.getElementById(`${item}`);
+          let link = document.querySelector(`a[href="#${item}"]`);
+
+          var elOffset = offset(el);
+          var dist = Math.round(elOffset.top - 70 - window.pageYOffset);
+
+          // console.log(el.id, dist)
+
+          if (window.pageYOffset - elOffset.top < dist) {
+            link.classList.remove("active");
+          } else {
+            link.classList.add("active");
+          }
+        });
+      }
+
+      function OpenCloseModal(modal, data) {
+        modal.classList.remove("modal-sm");
+
+        if (data && data === true) {
+          modal.classList.add("active");
+        } else {
+          modal.classList.remove("active");
+        }
+      }
+
+      window.addEventListener("DOMContentLoaded", (event) => {
+        var modal = document.querySelector("#modal-el");
+        let modalOpen = document.querySelector("button#open-modal");
+        let modalOpensmall = document.querySelector("button#open-modal-small");
+        let modalClose = document.querySelector("#close-modal");
+        let closex = document.querySelector("#btn-close-modal");
+
+        modalOpen.onclick = () => OpenCloseModal(modal, true);
+
+        modalClose.onclick = () => OpenCloseModal(modal);
+
+        closex.onclick = () => OpenCloseModal(modal);
+
+        modalOpensmall.onclick = () =>
+          modal.classList.add("modal-sm", "active");
+
+        getSections();
+        window.addEventListener("scroll", processChange);
+      });
+    </script>
+  </body>
+</html>
