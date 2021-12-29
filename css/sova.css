@@ -19,6 +19,10 @@
 	--container-max-width: 80em;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 
 /* Grid
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
